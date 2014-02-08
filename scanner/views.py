@@ -18,5 +18,3 @@ class ScannerIndexView(AppendToContextMixin, FormView):
         if len(request.POST['url']) > 0:
             qr = QrGenerator().generate_qr(request.POST['url'])
             return HttpResponse(qr)
-        else:
-            return HttpResponse('dupa')

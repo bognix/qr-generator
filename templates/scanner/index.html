@@ -3,9 +3,14 @@
 {% block content %}
     <h1>
         <div id="qr-img">
-            <img/>
         </div>
     </h1>
+    <a href="javascript:
+    (function () {
+        var jsCode = document.createElement('script');
+        jsCode.setAttribute('src', 'http://localhost:8000/static/js/bookmarklet.js');
+        document.body.appendChild(jsCode);
+    })()">Bookmarklet</a>
     <form action="{% url "scanner:index" %}" method="POST" id="qr-form">
     {% for field in form %}
         {% csrf_token %}
